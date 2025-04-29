@@ -1,4 +1,4 @@
-{
+const json = {
   "title": "Viltövervakningsenkäten 2024/2025",
   "description": "Vi vill personligen tacka dig för att du tar dig tiden att fylla i denna enkät! Vi uppskattar svaren du ger oss och vill styrka att de kommer hjälpa göra svensk viltövervakning bättre.  \n",
   "pages": [
@@ -13,8 +13,6 @@
           "title": "Vänligen ange din anonymiserings kod:",
           "isRequired": true,
           "inputType": "number",
-          "min": 6,
-          "max": 6,
           "step": 0
         }
       ]
@@ -403,7 +401,7 @@
         {
           "type": "text",
           "name": "trikin",
-          "visibleIf": "{antal_byte.Row 5} notempty",
+          "visibleIf": "{antal_byte.Row 7} notempty",
           "title": "Hur många av det fällda vildsvinen trikintestades?",
           "description": "Vi vill jämföra resultat från denna enkät med det nationella trikintesterna, och därmed veta ungefär hur många vildsvin som trikintestas. ",
           "inputType": "number"

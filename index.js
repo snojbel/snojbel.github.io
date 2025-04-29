@@ -1,17 +1,5 @@
-const surveyJson = {
-    elements: [{
-        name: "FirstName",
-        title: "Enter your first name:",
-        type: "text"
-    }, {
-        name: "LastName",
-        title: "Enter your last name:",
-        type: "text"
-    }]
-};
-
-const survey = new Survey.Model(surveyJson);
-
-document.addEventListener("DOMContentLoaded", function() {
-    survey.render(document.getElementById("surveyContainer"));
+const survey = new Survey.Model(json);
+survey.onComplete.add((sender, options) => {
+    console.log(JSON.stringify(sender.data, null, 3));
 });
+survey.render(document.getElementById("surveyElement"));
