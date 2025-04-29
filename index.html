@@ -1,59 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>Survey</title>
-  <script src="https://unpkg.com/survey-core/survey.core.min.js"></script>
-  <script src="https://unpkg.com/survey-knockout/survey.ko.min.js"></script>
-  <link href="https://unpkg.com/survey-core/defaultV2.min.css" rel="stylesheet"/>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      padding: 2em;
-      background: #f8f8f8;
-    }
-    #surveyContainer {
-      max-width: 600px;
-      margin: auto;
-    }
-  </style>
+    <title>My First Survey</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://unpkg.com/survey-core/survey-core.min.css" type="text/css" rel="stylesheet">
+    
+    <script type="text/javascript" src="https://unpkg.com/survey-core/survey.core.min.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/survey-js-ui/survey-js-ui.min.js"></script>
+    <script type="text/javascript" src="index.js"></script>
 </head>
 <body>
-  <h2>Simple Survey</h2>
-  <div id="surveyContainer"></div>
-
-  <script>
-    const surveyJSON = {
-      elements: [
-        {
-          name: "FirstName",
-          title: "Enter your first name:",
-          type: "text"
-        },
-        {
-          name: "LastName",
-          title: "Enter your last name:",
-          type: "text"
-        }
-      ]
-    };
-
-    const survey = new Survey.Model(surveyJSON);
-
-    survey.onComplete.add((sender) => {
-      console.log("Survey Results:", sender.data);
-
-      // Optional: send to Google Sheets or backend
-      /*
-      fetch("https://your-webhook-or-google-script-url", {
-        method: "POST",
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(sender.data)
-      });
-      */
-    });
-
-    Survey.SurveyNG.render("surveyContainer", { model: survey });
-  </script>
+    <div id="surveyContainer"></div>
 </body>
 </html>
